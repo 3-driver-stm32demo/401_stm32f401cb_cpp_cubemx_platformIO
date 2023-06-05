@@ -2,6 +2,9 @@
 #include "math.h"
 #include "usart.h"
 
+#define PRINTF_ANGLE 1
+#define PRINTF_RAW_DATA 1
+
 //初始化QMC5883，根据需要请参考pdf进行修改****
 void qmc5883l::Init_Reg_QMC5883()
 {
@@ -53,7 +56,14 @@ void qmc5883l::qmc5883l_printf_loop()
     while (1)
     {
         qmc5883l_printf_ = qmc5883l_read();
-        printf("raw_x raw_y raw_z %d %d %d\r\n",qmc5883l_printf_.raw_x,qmc5883l_printf_.raw_y,qmc5883l_printf_.raw_z);
+        #if PRINTF_ANGLE
+            printf("Angle_XY Angle_XZ Angle_YZ %3.2f %3.2f %3.2f\r\n",qmc5883l_printf_.Angle_XY,qmc5883l_printf_.Angle_XZ,qmc5883l_printf_.Angle_YZ);
+        #endif
+
+        #if PRINTF_RAW_DATA
+            printf("raw_x raw_y raw_z %d %d %d\r\n",qmc5883l_printf_.raw_x,qmc5883l_printf_.raw_y,qmc5883l_printf_.raw_z);
+        #endif
+
         HAL_Delay(10);
     }
 }

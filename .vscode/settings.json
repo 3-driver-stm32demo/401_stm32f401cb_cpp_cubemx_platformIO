@@ -2,5 +2,6 @@
     "files.associations": {
         "retarget.h": "c",
         "*.tcc": "cpp"
-    }
+    },
+    "cortex-debug.openocdPath": "C:\\USERS\\10243\\APPDATA\\ROAMING\\CODE\\USER\\GLOBALSTORAGE\\BMD.STM32-FOR-VSCODE\\@XPACK-DEV-TOOLS\\OPENOCD\\0.12.0-1.1\\.CONTENT\\BIN\\OPENOCD.EXE"
 }
