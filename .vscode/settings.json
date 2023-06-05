@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "retarget.h": "c",
-        "*.tcc": "cpp"
-    }
-}
